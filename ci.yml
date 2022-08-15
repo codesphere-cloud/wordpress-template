@@ -1,0 +1,20 @@
+# Example pipeline definition, for wordpress.
+
+
+prepare:
+  # Put your commands here.
+  steps:
+  - name: "Empty"
+    command: ""
+
+test:
+  # Put your commands here.
+  steps:
+  - name: "Empty"
+    command: ""
+
+run:
+  # Put your commands here.
+  steps:
+  - name: "Run"
+    command: "./start"
