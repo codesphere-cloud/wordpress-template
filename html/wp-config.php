@@ -41,6 +41,7 @@ define( 'DB_COLLATE', '' );
 
 if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
 	$_SERVER['HTTPS'] = 'on';
+	$_SERVER['SERVER_PORT'] = 443;
 }
 
 define( 'WP_HOME', 'https://' . $_SERVER['HTTP_HOST'] );
