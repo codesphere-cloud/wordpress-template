@@ -17,4 +17,4 @@ run:
   # Put your commands here.
   steps:
   - name: "Run"
-    command: "./start"
+    command: "./start.sh"
