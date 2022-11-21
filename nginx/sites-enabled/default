@@ -40,7 +40,7 @@ server {
 		deny all;
 	}
 
-	location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+	location ~* \.(js|css|png|jpg|jpeg|gif|ico|woff|woff2)$ {
 		expires max;
 		log_not_found off;
     }
