@@ -95,6 +95,8 @@ $table_prefix = 'wp_';
  */
 define( 'WP_DEBUG', false );
 
+define('WP_TEMP_DIR', '/home/user/app/tmp');
+
 /* Add any custom values between this line and the "stop editing" line. */
 
 
