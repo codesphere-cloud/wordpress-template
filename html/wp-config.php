@@ -47,7 +47,7 @@ if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PRO
 define( 'WP_HOME', 'https://' . $_SERVER['HTTP_HOST'] );
 define( 'WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST'] );
 
-$_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_HOST'];
+$_SERVER[ 'REMOTE_ADDR' ] = $_SERVER['HTTP_X_REAL_IP'];
 $_SERVER[ 'SERVER_ADDR' ] = $_SERVER['HTTP_HOST'];
 
 
