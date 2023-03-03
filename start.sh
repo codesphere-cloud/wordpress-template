@@ -11,8 +11,8 @@ mkdir -p /tmp/run
 export PHPRC=$SCRIPTPATH/php
 
 function stop_php() {
-    local pid = $(cat "/tmp/run/php7.4-fpm.pid")
-    kill pid
+    kill "$(cat /tmp/run/php7.4-fpm.pid)"
+    rm /tmp/run/php7.4-fpm.pid
 }
 
 if [ -f "/tmp/run/php7.4-fpm.pid" ]; then
