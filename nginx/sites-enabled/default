@@ -25,7 +25,7 @@ server {
 	# pass PHP scripts to FastCGI server
 	#
 	location ~ \.php$ {
-		include nginx/snippets/fastcgi-php.conf;
+		include /home/user/app/nginx/snippets/fastcgi-php.conf;
 	
 		# With php-fpm (or other unix sockets):
 		fastcgi_pass unix:/tmp/run/php-fpm.sock;
