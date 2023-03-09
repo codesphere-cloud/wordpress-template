@@ -2,6 +2,8 @@
 
 set +e
 
+VERSION="${PHP_VERSION:-7.4}"
+
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
@@ -11,16 +13,16 @@ mkdir -p /tmp/run
 export PHPRC=$SCRIPTPATH/php
 
 function stop_php() {
-    kill "$(cat /tmp/run/php7.4-fpm.pid)"
-    rm /tmp/run/php7.4-fpm.pid
+    kill "$(cat /tmp/run/php-fpm.pid)"
+    rm /tmp/run/php-fpm.pid
 }
 
-if [ -f "/tmp/run/php7.4-fpm.pid" ]; then
+if [ -f "/tmp/run/php-fpm.pid" ]; then
     stop_php
 fi
 
 echo "Start PHP FPM Service"
-php-fpm7.4 -y $SCRIPTPATH/php/php-fpm.conf
+php-fpm${VERSION} -y $SCRIPTPATH/php/php-fpm.conf
 
 trap stop_php EXIT
 
