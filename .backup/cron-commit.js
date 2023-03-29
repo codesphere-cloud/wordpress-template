@@ -42741,7 +42741,7 @@ var OPTIONS = [
 ];
 var doCommit = async (repo, author) => {
   const currentCommit = await (0, git_1.getCurrentCommit)();
-  await (0, git_1.stageFiles)(git_1.LOCAL_REPO, ["./"]);
+  await (0, git_1.stageFiles)(git_1.LOCAL_REPO, ["."]);
   const changed = await (0, git_1.changedFiles)(git_1.LOCAL_REPO, currentCommit.oid, "HEAD");
   if (0 === changed.length) {
     (0, logging_1.logI)(`Nothing to commit in repo ${repo.dir}. Skipping.`);
