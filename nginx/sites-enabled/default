@@ -15,6 +15,7 @@ server {
 	index index.php;
 
 	server_name _;
+	include /home/user/app/nginx/snippets/error_pages.conf;
 
 	location / {
 		# Static content.
