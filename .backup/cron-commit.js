@@ -42741,13 +42741,13 @@ var OPTIONS = [
 ];
 var doCommit = async (repo, author) => {
   const currentCommit = await (0, git_1.getCurrentCommit)();
+  await (0, git_1.stageFiles)(git_1.LOCAL_REPO, ["./"]);
   const changed = await (0, git_1.changedFiles)(git_1.LOCAL_REPO, currentCommit.oid, "HEAD");
   if (0 === changed.length) {
     (0, logging_1.logI)(`Nothing to commit in repo ${repo.dir}. Skipping.`);
     return;
   }
   (0, logging_1.logI)(`Found ${changed.length} changes.`);
-  await (0, git_1.stageFiles)(git_1.LOCAL_REPO, changed);
   await (0, git_1.commit)(repo, `Backup Commit ${(/* @__PURE__ */ new Date()).toISOString()}`, author);
   (0, logging_1.logI)(`Successfully committed repo ${repo.dir}.`);
 };
