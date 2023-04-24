@@ -48,7 +48,8 @@ php-fpm${VERSION} -y $SCRIPTPATH/php/php-fpm.conf
 
 trap stop_php EXIT
 
-if $ENABLE_COMMIT_CRON then
+if $ENABLE_COMMIT_CRON
+then
     start_commit_cron
     trap stop_commit_cron EXIT
 fi
