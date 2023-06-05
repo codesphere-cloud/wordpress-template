@@ -4,26 +4,13 @@ This project conatins [Wordpress](https://wordpress.org/) and is a template for 
 
 ### Setup wordpress
 
-1. Setup a [MySQL Database](https://www.mysql.com/). Wordpress needs a MySQL to run.<br>
-   Possible options where to get a MySQL database:
-   - Managed:
-     - AWS RDS: https://aws.amazon.com/rds/mysql/
-     - GCP CloudSQL for MYSQL: https://cloud.google.com/sql/docs/mysql
-     - Azure Database for MySQL: https://azure.microsoft.com/en-us/services/mysql/
-   - Self-Hosted
-     - Docker: https://hub.docker.com/_/mysql
+1. Setup a [MySQL Database](https://www.mysql.com/) in [Codesphere](https://docs.codesphere.com/tutorials/setting-up-woocommerce#create-a-new-database-skip-if-a-hosted-database-is-already-available) <br>
+    Wordpress needs a MySQL to run.
 2. Configure wordpress.<br>
    This project contains wordpress in [./html](./html).
    1. Open the wordpress config file in [./wp-config.php](./wp-config.php)
    2. Set the Database specific values like database name, username, password, etc..
-3. Start webserver (nginx) by running `./start.sh`
-
-### Operations
-
-Stop Webserver: `./stop.sh`
-Restart Webserver: `./restart.sh`
-
-Restart PHP FPM Service: `killall php-fpm7.4 && rm /tmp/run/php7.4-fpm.pid && ./restart.sh`
+3. Start webserver by starting the run stage of the pipline in codesphere. [See](https://docs.codesphere.com/tutorials/setting-up-woocommerce#run-your-application).
 
 ### Troubleshooting
 
