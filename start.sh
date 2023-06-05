@@ -2,7 +2,7 @@
 
 set +e
 
-VERSION="${PHP_VERSION:-7.4}"
+VERSION="${PHP_VERSION:-8.2}"
 
 ENABLE_COMMIT_CRON=true
 
