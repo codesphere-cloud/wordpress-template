@@ -34,7 +34,7 @@ function stop_commit_cron() {
 function start_commit_cron() {
     echo "Start Commit Cron Service"
     sudo -u admin n install 16.13.2
-    $SCRIPTPATH/.backup/cron-commit.js &
+    $SCRIPTPATH/.backup/cron-commit.js --schedule "0 */4 * * * *" &
     COMMIT_CRON_PID=$!
     echo $COMMIT_CRON_PID > /tmp/run/cron.pid
 }
