@@ -40,11 +40,21 @@ server {
     	# fastcgi_pass 127.0.0.1:9000;
     }
 
-    # deny access to .htaccess files, if Apache's document root
-    # concurs with nginx's one
+    location /wp-content/ {
+        # hide and do not interpret internal plugin or user uploaded scripts
+        location ~ \.php$ {
+            return 404;
+        }
+    }
+
+    # deny access to .htaccess files and all other hidden files
     #
-    location ~ /\.ht {
-    	deny all;
+    location ~ /\. {
+        deny all;
+    }
+
+    location ~ ^.+\.(log|sql|bak|php~|php#|php.save|php.swp|php.swo)$ {
+        return 404;
     }
 
     location ~* \.(js|css|png|jpg|jpeg|gif|ico|woff|woff2)$ {
