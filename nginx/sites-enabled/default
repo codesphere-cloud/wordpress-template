@@ -29,9 +29,9 @@ server {
 
     # Add traling slash to /wp-admin requests
     # to circumvent a bug in wp. https://community.localwp.com/t/going-to-wp-admin-without-trailing-slash-incorrectly-redirects-when-using-localhost-router-mode/28153/5
-	location ~ /wp-admin$ {
-		return 301 $scheme://$host$uri/;
-	}
+    location ~ /wp-admin$ {
+        return 301 $scheme://$host$uri/;
+    }
 
     location / {
     	# Static content.
